@@ -1,22 +1,12 @@
-import React from 'react';
-import HelloWorld from './share/HelloWorld';
+import React, { Component } from 'react'
+import Main from './share/组件通信/Main'
 
-class App extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      message: "ckj"
-    }
-  }
+export class App extends Component {
   render() {
-    const { message } = this.state
-
     return (
-      <div>
-        <h1>{message}</h1>
-        <HelloWorld /> 
-      </div>
+      <Main/>
     )
   }
 }
+
 export default App
