@@ -11,7 +11,7 @@ export class MainProductList extends Component {
       <div>MainProductList</div>
       <ul>
         {productList.map(item => {
-          return <li>{item}</li>
+          return <li key={item}>{item}</li>
         })}
       </ul>
     </>
