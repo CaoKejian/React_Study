@@ -3,9 +3,9 @@ import ThemeContext from './context/theme-context'
 
 export class HomeInfo extends Component {
   render() {
-    console.log(this.contextg);
+    console.log(this.context);
     return (
-      <div>HomeInfo</div>
+      <div>HomeInfot</div>
     )
   }
 }
