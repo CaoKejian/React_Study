@@ -7,6 +7,7 @@
 export class App extends Component {
 render() {
 return (
+
 <div>App</div>
 )
 }
@@ -21,3 +22,7 @@ export default App`
 ## `dob`
 
 `const { count } = this.state`
+
+# `EventBus 事件总线`
+
+## `npm install hy-event-store`
