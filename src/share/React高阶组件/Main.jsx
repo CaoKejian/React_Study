@@ -1,4 +1,5 @@
 import React, { Component, PureComponent } from 'react'
+import Main2 from './高阶组件的应用场景'
 
 function hoc(cpn) {
   // 定义类组件
@@ -23,7 +24,8 @@ const HelloWorldHoc = hoc(HelloWorld)
 export class Main extends Component {
   render() {
     return (
-      <HelloWorldHoc />
+      // <HelloWorldHoc />
+      <Main2 />
     )
   }
 }
