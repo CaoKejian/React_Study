@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Main from './share/React高阶组件/Main'
+import Main from './share/fragment/Main'
 
 export class App extends Component {
 
