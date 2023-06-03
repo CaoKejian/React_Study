@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Main from './share/表单的提交行为/Main'
+import Main from './share/React高阶组件/Main'
 
 export class App extends Component {
 
