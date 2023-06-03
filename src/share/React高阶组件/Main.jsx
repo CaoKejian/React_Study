@@ -1,4 +1,5 @@
 import React, { Component, PureComponent } from 'react'
+import Context from './Context/Context'
 import Main2 from './高阶组件的应用场景'
 
 function hoc(cpn) {
@@ -25,7 +26,8 @@ export class Main extends Component {
   render() {
     return (
       // <HelloWorldHoc />
-      <Main2 />
+      // <Main2 />
+      <Context />
     )
   }
 }
