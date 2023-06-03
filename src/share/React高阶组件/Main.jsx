@@ -1,5 +1,6 @@
 import React, { Component, PureComponent } from 'react'
 import Context from './Context/Context'
+import Detail from './Detail'
 import Login from './登录鉴权'
 import Main2 from './高阶组件的应用场景'
 
@@ -29,7 +30,8 @@ export class Main extends Component {
       // <HelloWorldHoc />
       // <Main2 />
       // <Context />
-      <Login />
+      // <Login />
+      <Detail />
     )
   }
 }
