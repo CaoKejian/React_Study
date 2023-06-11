@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Main from './share/React动画实现/Main'
+import Main from './share/classnames库/Main'
 
 export class App extends Component {
-  
+
   render() {
     return (
       <Main ></Main>
