@@ -1,28 +1,32 @@
 import React, { PureComponent } from 'react'
 import store from '../../store'
+import { addNumberAction } from '../../store/actionCreators'
 
 export class Home extends PureComponent {
   componentDidMount() {
     store.subscribe(() => {
       const state = store.getState()
-      this.setState({ counter: state.count })
+      this.setState({ count: state.count })
     })
   }
   constructor() {
     super()
     this.state = {
-      counter: store.getState().count
+      count: store.getState().count
     }
   }
+  addNumber(num) {
+    store.dispatch(addNumberAction(num))
+  }
   render() {
-    const { counter } = this.state
+    const { count } = this.state
 
     return (<div>
-      <div>Home Counter: {counter}</div>
+      <div>Home count: {count}</div>
       <div style={{ marginTop: 20 + 'px' }}>
-        <button>+1</button>
-        <button>+3</button>
-        <button>+5</button>
+        <button onClick={() => this.addNumber(1)}>+1</button>
+        <button onClick={() => this.addNumber(3)}>+3</button>
+        <button onClick={() => this.addNumber(5)}>+5</button>
       </div>
     </div>
     )

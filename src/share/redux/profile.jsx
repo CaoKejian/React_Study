@@ -5,20 +5,20 @@ export class Profile extends PureComponent {
   componentDidMount() {
     store.subscribe(() => {
       const state = store.getState()
-      this.setState({ counter: state.count })
+      this.setState({ count: state.count })
     })
   }
   constructor() {
     super()
     this.state = {
-      counter: store.getState().count
+      count: store.getState().count
     }
   }
   render() {
-    const { counter } = this.state
+    const { count } = this.state
 
     return (<div>
-      <div>Profile Counter: {counter}</div>
+      <div>Profile count: {count}</div>
       <div style={{ marginTop: 20 + 'px' }}>
         <button>-1</button>
         <button>-3</button>
