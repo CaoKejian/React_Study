@@ -10,12 +10,28 @@ export class About extends PureComponent {
     }
   }
   render() {
-    const { count } = this.props
+    const { count, banners, recommends } = this.props
     return (<div>
       <div>About:{count}</div>
       <div style={{ marginTop: 20 + 'px' }}>
         <button onClick={() => this.click(100)}>+100</button>
         <button onClick={() => this.click(-50)}>-50</button>
+      </div>
+      <div className='banner'>
+        <span>轮播图数据</span>
+        <ul>
+          {banners.map((v, index) => {
+            return <li key={index}>{v.title}</li>
+          })}
+        </ul>
+      </div>
+      <div className='recommend'>
+        <span>推荐数据</span>
+        <ul>
+          {recommends.map((v, index) => {
+            return <li key={index}>{v.title}</li>
+          })}
+        </ul>
       </div>
     </div>
     )
@@ -33,7 +49,9 @@ function fn2(dispatch) {
 }
 function fn(state) {
   return {
-    count: state.count
+    count: state.count,
+    banners: state.banners,
+    recommends: state.recommends
   }
 }
 export default connect(fn, fn2)(About)

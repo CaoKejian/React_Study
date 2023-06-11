@@ -4,6 +4,7 @@ import Profile from './profile'
 import './style.css'
 import store from '../../store'
 import About from './about'
+import Category from './category'
 
 export class Main extends PureComponent {
   componentDidMount() {
@@ -27,6 +28,7 @@ export class Main extends PureComponent {
           <Home />
           <Profile />
           <About />
+          <Category />
         </div>
       </div>
     )
