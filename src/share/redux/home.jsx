@@ -12,7 +12,12 @@ export class Home extends PureComponent {
   constructor() {
     super()
     this.state = {
-      count: store.getState().count
+      count: store.getState().count,
+      message:'colin',
+      form:{
+        em:'1849201815@qq.com',
+        pd:'123'
+      }
     }
   }
   addNumber(num) {

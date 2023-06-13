@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Main from './share/redux/Main'
+import Main from './share/reduxRdk/Main'
 
 export class App extends Component {
 
