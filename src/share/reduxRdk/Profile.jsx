@@ -1,9 +1,6 @@
-import axios from 'axios'
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import store from '../../store2'
 import { subNumber } from '../../store2/modules/count'
-import { changeBanners, changeRecommends } from '../../store2/modules/home'
 
 export class Profile extends PureComponent {
   click(num) {
@@ -20,7 +17,7 @@ export class Profile extends PureComponent {
           轮播图数据：
           <ul>
             {this.props.banners.map(v => {
-              return <li key={v}>{v.title}</li>
+              return <li key={v.title}>{v.title}</li>
             })}
           </ul>
         </div>

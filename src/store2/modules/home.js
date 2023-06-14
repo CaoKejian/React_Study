@@ -1,5 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
+
+export const fetchHomeMultidataAction = createAsyncThunk("fetch/homeMultidata", async () => {
+  const res = await axios.get('http://123.207.32.32:8000/home/multidata')
+  return res.data
+})
 const homeSlice = createSlice({
   name: 'home',
   initialState: {
@@ -13,7 +19,13 @@ const homeSlice = createSlice({
     changeRecommends(state, { payload }) {
       state.recommends = payload
     }
+  },
+  extraReducers: {
+    [fetchHomeMultidataAction.fulfilled](state, { payload }) {
+      state.banners = payload.data.banner.list
+      state.recommends = payload.data.recommend.list
+    }
   }
 })
-export const {changeBanners,changeRecommends} = homeSlice.actions
+export const { changeBanners, changeRecommends } = homeSlice.actions
 export default homeSlice.reducer

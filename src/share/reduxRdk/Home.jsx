@@ -1,18 +1,11 @@
-import axios from 'axios'
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import store from '../../store2'
 import { addNumber } from '../../store2/modules/count'
-import { changeBanners, changeRecommends } from '../../store2/modules/home'
+import { fetchHomeMultidataAction } from '../../store2/modules/home'
 
 export class Home extends PureComponent {
-  componentDidMount() {
-    axios.get('http://123.207.32.32:8000/home/multidata').then(res => {
-      const banners = res.data.data.banner.list
-      const recommends = res.data.data.recommend.list
-      store.dispatch(changeBanners(banners))
-      store.dispatch(changeRecommends(recommends))
-    })
+  componentDidMount(){
+    this.props.fetchHomeMultidata()
   }
   click(num) {
     this.props.click(num)
@@ -35,6 +28,9 @@ const countToProps = (state) => ({
 const clickToProps = (dispatch) => ({
   click(num) {
     dispatch(addNumber(num))
+  },
+  fetchHomeMultidata(){
+    dispatch(fetchHomeMultidataAction())
   }
 })
 export default connect(countToProps, clickToProps)(Home) 
